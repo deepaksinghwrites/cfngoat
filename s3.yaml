@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      Tags:
+        - Key: driftdetection
+          Value: prismacloud
+        - Key: S3bucket
+          Value: infrastructure
+      BucketName: !Join
+        - "-"
+        - - "s3-bucket-dps"
+          - !Select
+            - 0
+            - !Split
+              - "-"
+              - !Select
+                - 2
+                - !Split
+                  - "/"
+                  - !Ref "AWS::StackId" 

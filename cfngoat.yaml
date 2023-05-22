@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: AWS CFT Template to deploy insecure infrastructure
+Description: AWS CFT to deploy insecure infrastructure
 Parameters:
   CompanyName:
     Description: Company Name
